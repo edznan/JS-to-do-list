@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>To Do List</title>
+        <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    </head>
+    <body>
+
+        <div class="container mt-4">
+
+            <h1 class="display-4 text-center">
+                <i class="far fa-list-alt text-primary"></i>
+                To Do List
+            </h1>
+            <h2 class="text-secondary"><i class="fas fa-chevron-right mr-3"></i> The list</h2>
+            <table class="table table-striped mt-5" id="tasks-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Task</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Date Started</th>
+                        <th>Date Ended</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="task-list">
+                    <!--Content is inserted by logic.js.-->
+                </tbody>
+            </table>
+            <br>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal">
+                Add new task
+              </button>
+        </div>
+
+                <!-- The Modal -->
+                <div class="modal" id="modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title"><i class="fas fa-chevron-right mr-3"></i> Add a task</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <form id="task-list-form">
+                                    <div class="form-group">
+                                        <label for="Task">Task</label>
+                                        <input type="text" id="task" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Description</label>
+                                        <textarea rows="4" id="description" class="form-control"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="status">Status</label>
+                                        <select class="form-control" id="status">
+                                            <option>Waiting for the start</option>
+                                            <option>In Progress</option>
+                                            <option>Done</option>
+                                            <option>Paused</option>
+                                            <option>Canceled</option>
+                                          </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="date-started">Date started</label>
+                                        <input type="date" id="date-started" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="date-ended">Date ended</label>
+                                        <input type="date" id="date-ended" class="form-control">
+                                    </div>
+                                    <input type="submit" value="Add" class="btn btn-primary btn-block">
+                                </form>
+                            </div>
+                
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+
+        <script type="text/javascript" src="logic.js"></script>
+    </body>
+</html>
